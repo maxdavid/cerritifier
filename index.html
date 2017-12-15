@@ -2,9 +2,7 @@
 <html>
  <head>
 	 
-<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
- <!--<link rel="stylesheet"
-          href="https://fonts.googleapis.com/css?family=PT+Sans+Narrow">-->
+ <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
  <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
 
  
@@ -21,32 +19,16 @@
      location.reload();
  }
  function clearAll() {
-     //document.getElementById("line1").value = "";
-     //document.getElementById("line2").value = "";
-     //document.getElementById("line3").value = "";
-     //document.getElementById("line4").value = "";
-     //document.getElementById("line5").value = "";
-     //document.getElementById("source").value = "";
 	 document.getElementById("inputText").value = "";
  }
  window.onload = function() {
      document.getElementById("again").style.display = "none";
 	 document.getElementById("download").style.display = "none";
-	 //document.getElementById("cerritButton").style.display = "inline";
-     //document.getElementById("clear").style.display = "inline";
 	 document.getElementById("myCanvas").style.display = "none";
 	 document.getElementById('download').addEventListener('click', function() {
      downloadCanvas(this, 'myCanvas', 'cerritified_headline.png');
 }, false);
  };
- //document.fonts.ready.then(function() {
- //    document.getElementById("cerritButton").innerHTML = "cerritify!";
- //    document.getElementById("cerritButton").disabled = false;
- //});
- //var form = document.getElementById("veritForm");
- //function handleForm(event) {
- //    event.preventDefault();
- //}
  
  function downloadCanvas(link, canvasId, filename) {
     link.href = document.getElementById(canvasId).toDataURL();
@@ -61,8 +43,6 @@
 	 download.style.display = "inline";
 	 download.style.color = "blue";
 	 download.style.textDecoration = "underline";
-	 
-	 var uploadedImg = document.getElementById("uploadedImg");
 	 
 	 
 	 
@@ -147,26 +127,6 @@
          context.fillText(lines[4], 150, 400);
 		 context.save();
 		 
-		  
-		 //pasting on the image
-		 if(uploadedImg.src != "") {
-			//calculate appropriate height
-			var width = 200;
-			var height = 200;
-			if(uploadedImg.height <= 200 && uploadedImg.width <= 400) {
-				width = uploadedImg.width;
-				height = uploadedImg.height;
-			}
-			else {
-				height = Math.floor(uploadedImg.width/width * uploadedImg.height);
-		    }
-			context.drawImage(uploadedImg, 1200 - width - 50, 50,width,height);
-			context.save();
-		 }
-		 
-		 //pasting the link in the bottom right corner
-		 context.font = "14px PT Sans Narrow";
-		 context.fillText("bit.do/cerritify", 1125, 592);
         
 		 //pasting on the source
 		 context.translate(600, 300);
@@ -178,10 +138,6 @@
          context.fillText(source.value, 350, -210);
          context.rotate(Math.PI / 2);
          context.save();
-         // open the image in a new browser tab
-         // the user can right-click and save that image
-         //var win=window.open();
-         //this.document.write("<img src='" + canvas.toDataURL() + "'/>");
      };
 	 
 	 
@@ -228,29 +184,11 @@
   <p>Make your own cerrit news headline below! Spread your truth! Get cerriting!</p>
 	
 	Source:<br>
-  <input type="text" name="Source" id="source" size="40" maxlength="52" value="BlueShareReviewit"><br>
+  <input type="text" name="Source" id="source" size="40" maxlength="52" value="Reliable News Source"><br>
 	cerrit Headline:<br>
 	<textarea id="inputText" rows="5" cols="52" maxlength="260">Write a paragraph of up to 260 characters OR write up to 5 lines of 52 characters each.
-It will automatically append text beyond the 5th line to the 5th line. Any text beyond 52 characters on any line will auto-wrap.
 	  </textarea><br>
-	  Image: <input type="file" onchange="previewFile()"><br>
-	  <strong>*WARNING* If using an image, limit yourself to about 30 characters for the first 2 or 3 lines. Don't use autowrap.</strong><br>
-	  <img id="uploadedImg" src="" height="200" alt="No valid image selected..."><br>
-		  <!-- <form id="veritForm">  -->
 
-
-  <!-- Line 1:<br> -->
-  <!-- <input type="text" name="Line 1" id="line1" size="40" maxlength="52" value="Campaigning for votes is undemocratic."> -->
-  <!-- <br> -->
-  <!-- Line 2:<br> -->
-  <!-- <input type="text" name="Line 2" id="line2" size="40" maxlength="52" value="Votes are owned, not earned."> -->
-  <!-- <br> -->
-  <!-- Line 3:<br> -->
-  <!-- <input type="text" name="Line 3" id="line3" size="40" maxlength="52" value=""><br> -->
-  <!-- Line 4:<br> -->
-  <!-- <input type="text" name="Line 4" id="line4" size="40" maxlength="52" value=""><br> -->
-  <!-- Line 5:<br> -->
-  <!-- <input type="text" name="Line 5" id="line5"size="40" maxlength="52" value=""><br><br> -->
   <button type="button"  onclick="clearAll()" id="clear"> Clear </button>
   <button type="button"  onclick="cerritifyTextArea()" id="cerritButton" > cerritify! </button>
   <a id="download" download="cerritified.png">Download It!</a>
