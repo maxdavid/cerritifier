@@ -177,24 +177,27 @@
  //form.addEventListener('submit', handleForm);
  
 </script>
+
+<style>
+body { font-family:'PT Sans Narrow'; font-size:14pt; }
+</style>
+
  </head>
   <body>
   
 <h1 style="font-family: 'PT Sans Narrow';">Cerritifier</h1>
-  <p>Make your own cerrit news headline below! Spread your truth! Get cerriting!</p>
+  <p>Make your own Cerrit news headline below! Spread your truth! Get cerriting!</p>
 	
 	Source:<br>
-  <input type="text" name="Source" id="source" size="40" maxlength="52" value="Reliable News Source"><br>
-	cerrit Headline:<br>
+  <input type="text" name="Source" id="source" size="40" maxlength="52" value="Reliable News Source"><br><br>
+	Headline:<br>
 	<textarea id="inputText" rows="5" cols="52" maxlength="260">Write a paragraph of up to 260 characters OR write up to 5 lines of 52 characters each.
 	  </textarea><br>
 
   <button type="button"  onclick="clearAll()" id="clear"> Clear </button>
   <button type="button"  onclick="cerritifyTextArea()" id="cerritButton" > cerritify! </button>
   <a id="download" download="cerritified.png">Download It!</a>
-  <button type="button"  onclick="refresh()" id="again"> Click to make another one!</button>
-<!-- </form>  -->
-<br>
+  <button type="button"  onclick="refresh()" id="again"> Click to make another one!</button><br><br>
     <canvas id="myCanvas" width=1200 height = 600>
     </canvas>
   </body>
